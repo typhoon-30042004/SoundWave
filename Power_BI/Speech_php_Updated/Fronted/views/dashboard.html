@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapist Dashboard - Therapy Management System</title>
+    <link rel="stylesheet" href="/Fronted/assests/css/dashboard-therapist.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h1>Menu</h1>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="patient-management.html">Patient Management</a>
+        <a href="/Fronted/views/therapy-plan.html">Therapy Plans</a>
+        <a href="/Fronted/views/session-doc.html">Session Documentation</a>
+        <a href="progress-reports.html">Progress Reports</a>
+        <a href="supervision.html">Supervision</a>
+        <a href="settings.html">Settings</a>
+        <a href="login.html">Logout</a>
+    </div>
+    <button id="sidebarToggle" class="sidebar-toggle">&#9776;</button>
+
+    <!-- Main Content Area -->
+    <div class="main-content" id="mainContent">
+        <h1>Therapist Dashboard</h1>
+
+        <!-- Patient Links Section -->
+        <div class="patient-links">
+            <h2>Patient Links</h2>
+            <div class="flex-container">
+                <div class="card">
+                    <h3>Patient A</h3>
+                    <p>View therapy sessions and progress.</p>
+                    <a href="patient-management.html" class="btn">View Patient</a>
+                </div>
+                <div class="card">
+                    <h3>Patient B</h3>
+                    <p>Manage therapy plan and goals.</p>
+                    <a href="/Fronted/views/therapy-plan.html" class="btn">Manage Plan</a>
+                </div>
+                <div class="card">
+                    <h3>Patient C</h3>
+                    <p>Review session documentation.</p>
+                    <a href="/Fronted/views/session-doc.html" class="btn">Review Sessions</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- To-Do Tasks Section -->
+        <div class="to-do-tasks">
+            <h2>To-Do Tasks</h2>
+            <ul id="taskList">
+                <li><input type="checkbox"> Complete therapy plan for Patient A <button onclick="deleteTask(this)">Delete</button></li>
+                <li><input type="checkbox"> Document session for Patient B <button onclick="deleteTask(this)">Delete</button></li>
+                <li><input type="checkbox"> Review progress report for Patient C <button onclick="deleteTask(this)">Delete</button></li>
+                <li><input type="checkbox"> Update supervision notes <button onclick="deleteTask(this)">Delete</button></li>
+            </ul>
+            <input type="text" id="newTaskInput" placeholder="New task...">
+            <button onclick="addTask()">Add Task</button>
+        </div>
+
+        <!-- Recent Activities Section -->
+        <div class="recent-activities">
+            <h2>Recent Activities</h2>
+            <ul>
+                <li><strong>John Doe</strong> updated the therapy plan for <strong>Patient A</strong> (Today).</li>
+                <li><strong>Jane Smith</strong> completed session documentation for <strong>Patient B</strong> (Yesterday).</li>
+                <li><strong>Admin</strong> added a new therapist to the system (2 days ago).</li>
+                <li><strong>Dr. Brown</strong> reviewed the progress report for <strong>Patient C</strong> (3 days ago).</li>
+            </ul>
+        </div>
+
+        <!-- Statistics Reports Section -->
+        <div class="statistics-reports">
+            <h2>Statistics Reports</h2>
+            <div class="flex-container">
+                <div class="card">
+                    <h3>Patient Progress Overview</h3>
+                    <canvas id="progressChart"></canvas>
+                </div>
+                <div class="card">
+                    <h3>Session Counts</h3>
+                    <canvas id="sessionCountChart"></canvas>
+                </div>
+                <div class="card">
+                    <h3>Therapy Goals Achieved</h3>
+                    <canvas id="goalsChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Fronted/assests/js/therapist-dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

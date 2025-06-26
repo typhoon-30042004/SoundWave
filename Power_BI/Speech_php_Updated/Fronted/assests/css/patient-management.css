@@ -1,0 +1,245 @@
+/* Enhanced progress-reports.css */
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    height: 100%;
+    background-color: #34495e;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 60px;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    z-index: 1000; /* Ensure sidebar stays above the content */
+}
+
+.sidebar.collapsed {
+    width: 0;
+}
+
+.sidebar h2 {
+    text-align: center;
+    padding-left: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background-color: #1abc9c;
+}
+
+/* Hide text when sidebar is collapsed */
+.sidebar.collapsed h2,
+.sidebar.collapsed a {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Toggle Button */
+.toggle-btn {
+    font-size:24px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    z-index: 1100; /* Ensure toggle button stays above the sidebar */
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 260px;
+    padding: 30px;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed + .main-content {
+    margin-left: 70px; /* Adjusted margin to match collapsed sidebar width */
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.search-filter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-filter input,
+.search-filter select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-filter button {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-filter button:hover {
+    background-color: #1abc9c;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1abc9c;
+}
+
+/* Patient List */
+.patient-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+.patient-list th,
+.patient-list td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.patient-list th {
+    background-color: #34495e;
+    color: white;
+}
+
+.patient-list tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.patient-list tr:hover {
+    background-color: #ddd;
+}
+
+.patient-list .actions {
+    display: flex;
+    gap: 10px;
+}
+
+.patient-list .actions button {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    border-radius: 10px;
+    position: relative;
+}
+
+.modal-content .close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.modal-content .close:hover,
+.modal-content .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Statistics, Progress Overview, Recent Activities, To-Do List */
+.statistics,
+.progress-overview,
+.recent-activities,
+.todo-tasks {
+    margin-top: 50px;
+}
+
+.todo-tasks ul,
+.recent-activities ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.todo-tasks ul li,
+.recent-activities ul li {
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.todo-tasks ul li:hover,
+.recent-activities ul li:hover {
+    background-color: #ddd;
+}

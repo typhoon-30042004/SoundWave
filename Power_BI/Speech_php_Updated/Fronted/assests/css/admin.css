@@ -1,0 +1,181 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    background-color: #f0f2f5; /* Light background color */
+}
+
+.toggle-btn {
+    position: fixed; /* Fixed position */
+    top: 15px; /* Adjust top position to give space from the title */
+    left: 15px; /* Ensure button is within viewport */
+    background-color: #007bff; /* Primary color */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 3; /* Ensure button is above sidebar */
+    transition: left 0.3s ease; /* Smooth transition for button movement */
+    border-radius: 8px; /* Rounded corners for button */
+}
+
+.sidebar {
+    width: 250px;
+    height: 100%;
+    background-color: #343a40; /* Secondary color */
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0; /* Initially visible */
+    padding: 20px;
+    transition: transform 0.3s ease;
+    z-index: 2; /* Ensure sidebar is below button */
+    transform: translateX(0); /* Default position */
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%); /* Hide sidebar */
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    padding-left: 50px; /* Increased padding for button space */
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 8px; /* Rounded corners for links */
+}
+
+.sidebar a:hover {
+    background-color: #495057; /* Darker shade for hover effect */
+}
+
+.content {
+    margin-left: 250px; /* Initial space for visible sidebar */
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* Smooth transition for margin adjustment */
+}
+
+.top-nav {
+    padding: 10px;
+    background-color: #007bff; /* Primary color */
+    color: white; /* Text color for top nav */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 250px; /* Initial space for visible sidebar */
+    transition: margin-left 0.3s ease; /* Smooth transition for margin adjustment */
+}
+
+.top-nav h1 {
+    margin: 0;
+    padding-left: 20px; /* Space from the toggle button */
+}
+
+.search-bar input {
+    padding: 5px;
+    border: none;
+    border-radius: 8px; /* Rounded corners for input */
+    font-size: 16px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-profile img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.main-content {
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* Smooth transition for margin adjustment */
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effect */
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Increased shadow on hover */
+    transform: scale(1.02); /* Slightly scale up on hover */
+}
+
+.chart-container {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.notifications, .upcoming-sessions, .recent-activity {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.notifications h3, .upcoming-sessions h3, .recent-activity h3 {
+    margin-top: 0;
+}
+
+.notifications ul, .upcoming-sessions ul, .recent-activity ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notifications li, .upcoming-sessions li, .recent-activity li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.notifications li:last-child, .upcoming-sessions li:last-child, .recent-activity li:last-child {
+    border-bottom: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .toggle-btn {
+        left: 10px; /* Adjusted position for smaller screens */
+    }
+
+    .content {
+        margin-left: 0; /* Adjust for smaller screens */
+    }
+
+    .top-nav {
+        margin-left: 0; /* Adjust for smaller screens */
+    }
+}

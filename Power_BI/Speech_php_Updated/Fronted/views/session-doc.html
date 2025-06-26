@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Documentation</title>
+    <link rel="stylesheet" href="/Fronted/assests/css/session-doc.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <h1>Menu</h1>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="patient-management.html">Patient Management</a>
+        <a href="/Fronted/views/therapy-plan.html">Therapy Plans</a>
+        <a href="/Fronted/views/session-doc.html">Session Documentation</a>
+        <a href="progress-reports.html">Progress Reports</a>
+        <a href="supervision.html">Supervision</a>
+        <a href="settings.html">Settings</a>
+        <a href="login.html">Logout</a>    
+    </div>
+    <button id="sidebarToggle" class="sidebar-toggle">&#9776;</button>
+
+    <div class="content" id="content">
+            <h1>Session Documentation</h1>
+        
+        <form action="submit_report.php" method="post" class="report-form">
+            <fieldset>
+                <legend>Patient Information</legend>
+                <label for="patient-name">Patient Name:</label>
+                <input type="text" id="patient-name" name="patient_name" required>
+
+                <label for="session-date">Session Date:</label>
+                <input type="date" id="session-date" name="session_date" required>
+                
+                <label for="therapist-name">Therapist Name:</label>
+                <input type="text" id="therapist-name" name="therapist_name" required>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Session Ratings</legend>
+                
+                <label for="speech-clarity">Speech Clarity (Articulation):</label>
+                <select id="speech-clarity" name="speech_clarity">
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+
+                <label for="language-comprehension">Language Comprehension (Receptive Language):</label>
+                <select id="language-comprehension" name="language_comprehension">
+                    <option value="1">1 - Minimal Improvement</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Significant Improvement</option>
+                </select>
+
+                <label for="language-expression">Language Expression (Expressive Language):</label>
+                <select id="language-expression" name="language_expression">
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+
+                <label for="fluency">Fluency:</label>
+                <select id="fluency" name="fluency">
+                    <option value="1">1 - Minimal Fluency</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Excellent Fluency</option>
+                </select>
+
+                <label for="voice-quality">Voice Quality:</label>
+                <select id="voice-quality" name="voice_quality">
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+
+                <label for="social-communication">Social Communication (Pragmatics):</label>
+                <select id="social-communication" name="social_communication">
+                    <option value="1">1 - Minimal Improvement</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+
+                <label for="cognitive-communication">Cognitive-Communication Skills:</label>
+                <select id="cognitive-communication" name="cognitive_communication">
+                    <option value="1">1 - Minimal Improvement</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Significant Improvement</option>
+                </select>
+
+                <label for="swallowing">Swallowing (Dysphagia):</label>
+                <select id="swallowing" name="swallowing">
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+
+                <label for="patient-engagement">Patient Engagement and Motivation:</label>
+                <select id="patient-engagement" name="patient_engagement">
+                    <option value="1">1 - Low Engagement</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - High Engagement</option>
+                </select>
+
+                <label for="overall-progress">Overall Progress Toward Goals:</label>
+                <select id="overall-progress" name="overall_progress">
+                    <option value="1">1 - Minimal Progress</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Significant Progress</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Additional Feedback</legend>
+                
+                <label for="therapist-performance">Therapist Performance:</label>
+                <textarea id="therapist-performance" name="therapist_performance" rows="4" placeholder="Provide feedback on how effectively the therapist managed the case."></textarea>
+
+                <label for="patient-satisfaction">Patient Satisfaction:</label>
+                <textarea id="patient-satisfaction" name="patient_satisfaction" rows="4" placeholder="Provide feedback on the patient's satisfaction with the therapy sessions and outcomes."></textarea>
+            </fieldset>
+
+            <button type="submit">Submit Report</button>
+        </form>
+    </div>
+    <script src="/Fronted/assests/js/session-doc.js"></script>
+</body>
+</html>

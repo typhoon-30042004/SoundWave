@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Reports - Therapy Management System</title>
+    <link rel="stylesheet" href="/Fronted/assests/css/progress-reports.css">
+</head>
+
+<body>
+    <!-- Toggle Button -->
+    <button class="toggle-btn" id="toggle-sidebar">☰</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="patient-management.html">Patient Management</a>
+        <a href="/Fronted/views/therapy-plan.html">Therapy Plans</a>
+        <a href="session-doc.html">Session Documentation</a>
+        <a href="progress-reports.html" class="active">Progress Reports</a>
+        <a href="supervision.html">Supervision</a>
+        <a href="settings.html">Settings</a>
+        <a href="login.html">Logout</a>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <h1>Progress Report</h1>
+
+        <!-- Progress Report Form -->
+        <div class="progress-report">
+            <form id="progress-report-form">
+                <h2>Patient Details</h2>
+                <label for="patient-name">Name:</label>
+                <input type="text" id="patient-name" name="patient-name" required>
+
+                <label for="patient-age">Age:</label>
+                <input type="number" id="patient-age" name="patient-age" required>
+
+                <label for="therapy-plan">Therapy Plan:</label>
+                <input type="text" id="therapy-plan" name="therapy-plan" required>
+
+                <h2>Progress Evaluation</h2>
+                <label for="speech-clarity">Speech Clarity (Articulation):</label>
+                <select id="speech-clarity" name="speech-clarity">
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+
+                <label for="language-comprehension">Language Comprehension:</label>
+                <select id="language-comprehension" name="language-comprehension">
+                    <option value="1">1 - Minimal Improvement</option>
+                    <option value="2">2 - Fair Improvement</option>
+                    <option value="3">3 - Good Improvement</option>
+                    <option value="4">4 - Very Good Improvement</option>
+                    <option value="5">5 - Significant Improvement</option>
+                </select>
+
+                <label for="language-expression">Language Expression:</label>
+                <select id="language-expression" name="language-expression">
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+
+                <label for="fluency">Fluency:</label>
+                <select id="fluency" name="fluency">
+                    <option value="1">1 - Minimal Fluency</option>
+                    <option value="2">2 - Fair Fluency</option>
+                    <option value="3">3 - Good Fluency</option>
+                    <option value="4">4 - Very Good Fluency</option>
+                    <option value="5">5 - Excellent Fluency</option>
+                </select>
+
+                <label for="voice-quality">Voice Quality:</label>
+                <select id="voice-quality" name="voice-quality">
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+
+                <label for="social-communication">Social Communication:</label>
+                <select id="social-communication" name="social-communication">
+                    <option value="1">1 - Minimal Communication</option>
+                    <option value="2">2 - Fair Communication</option>
+                    <option value="3">3 - Good Communication</option>
+                    <option value="4">4 - Very Good Communication</option>
+                    <option value="5">5 - Excellent Communication</option>
+                </select>
+
+                <label for="cognitive-skills">Cognitive-Communication Skills:</label>
+                <select id="cognitive-skills" name="cognitive-skills">
+                    <option value="1">1 - Minimal Improvement</option>
+                    <option value="2">2 - Fair Improvement</option>
+                    <option value="3">3 - Good Improvement</option>
+                    <option value="4">4 - Very Good Improvement</option>
+                    <option value="5">5 - Significant Improvement</option>
+                </select>
+
+                <label for="swallowing">Swallowing (Dysphagia):</label>
+                <select id="swallowing" name="swallowing">
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+
+                <label for="patient-engagement">Patient Engagement and Motivation:</label>
+                <select id="patient-engagement" name="patient-engagement">
+                    <option value="1">1 - Low</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - High</option>
+                </select>
+
+                <label for="overall-progress">Overall Progress Toward Goals:</label>
+                <select id="overall-progress" name="overall-progress">
+                    <option value="1">1 - Minimal Progress</option>
+                    <option value="2">2 - Fair Progress</option>
+                    <option value="3">3 - Good Progress</option>
+                    <option value="4">4 - Very Good Progress</option>
+                    <option value="5">5 - Significant Progress</option>
+                </select>
+
+                <h2>Additional Notes</h2>
+                <label for="therapist-notes">Therapist's Notes:</label>
+                <textarea id="therapist-notes" name="therapist-notes" rows="5"></textarea>
+
+                <button type="submit">Submit Report</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const toggleSidebar = document.getElementById("toggle-sidebar");
+        const sidebar = document.querySelector(".sidebar");
+        const mainContent = document.querySelector(".main-content");
+
+        toggleSidebar.addEventListener("click", () => {
+            sidebar.classList.toggle("collapsed");
+            mainContent.classList.toggle("collapsed");
+        });
+    </script>
+</body>
+
+</html>

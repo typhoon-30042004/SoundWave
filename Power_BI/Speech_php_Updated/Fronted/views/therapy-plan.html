@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapy Plans - Therapy Management System</title>
+    <link rel="stylesheet" href="/Fronted/assests/css/therapy-plan.css">
+</head>
+<body>
+    <!-- Toggle Button -->
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar closed">
+        <h2>Menu</h2>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="patient-management.html">Patient Management</a>
+        <a href="therapy-plan.html" class="active">Therapy Plans</a>
+        <a href="session-doc.html">Session Documentation</a>
+        <a href="progress-reports.html">Progress Reports</a>
+        <a href="supervision.html">Supervision</a>
+        <a href="settings.html">Settings</a>
+        <a href="login.html">Logout</a>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <h1>Therapy Plans</h1>
+
+        <!-- Add New Therapy Plan -->
+        <div class="add-therapy-plan">
+            <h2>Create New Therapy Plan</h2>
+            <form id="add-therapy-plan-form">
+                <label for="plan-name">Plan Name:</label>
+                <input type="text" id="plan-name" name="plan-name" required>
+
+                <label for="plan-description">Description:</label>
+                <textarea id="plan-description" name="plan-description" required></textarea>
+
+                <label for="plan-goals">Therapy Goals:</label>
+                <textarea id="plan-goals" name="plan-goals" required></textarea>
+
+                <label for="plan-duration">Duration (Weeks):</label>
+                <input type="number" id="plan-duration" name="plan-duration" required>
+
+                <button type="submit">Create Plan</button>
+            </form>
+        </div>
+
+        <!-- Therapy Plan List with Filters -->
+        <div class="therapy-plan-list">
+            <h2>Existing Therapy Plans</h2>
+            <div class="filters">
+                <label for="filter-name">Filter by Name:</label>
+                <input type="text" id="filter-name" placeholder="Search by name...">
+
+                <label for="filter-duration">Filter by Duration (Weeks):</label>
+                <input type="number" id="filter-duration" placeholder="Filter by duration...">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Plan Name</th>
+                        <th>Description</th>
+                        <th>Duration</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="therapy-plan-table-body">
+                    <!-- Dynamic Content will be added here via JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Therapy Plan Details Modal -->
+    <div id="therapy-plan-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Therapy Plan Details</h2>
+            <div id="therapy-plan-details">
+                <!-- Plan details will be loaded here dynamically -->
+            </div>
+            <button onclick="editTherapyPlan()">Edit Plan</button>
+            <button onclick="deleteTherapyPlan()">Delete Plan</button>
+        </div>
+    </div>
+
+    <script src="/Fronted/assests/js/therapy-plans.js"></script>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const mainContent = document.querySelector('.main-content');
+            sidebar.classList.toggle('closed');
+            mainContent.classList.toggle('expanded');
+        }
+
+        function closeModal() {
+            document.getElementById('therapy-plan-modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

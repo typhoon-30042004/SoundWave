@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervision - Therapy Management System</title>
+    <link rel="stylesheet" href="/Fronted/assests/css/supervision.css">
+</head>
+
+<body>
+    <!-- Toggle Button -->
+    <button class="toggle-btn" id="toggle-sidebar">☰</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h2>Menu</h2>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="patient-management.html">Patient Management</a>
+        <a href="therapy-plan.html">Therapy Plans</a>
+        <a href="session-doc.html">Session Documentation</a>
+        <a href="progress-reports.html">Progress Reports</a>
+        <a href="supervision.html" class="active">Supervision</a>
+        <a href="settings.html">Settings</a>
+        <a href="login.html">Logout</a>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <h1>Supervision</h1>
+
+        <!-- Therapist Supervision Overview -->
+        <div class="supervision-overview progress-report">
+            <h2>Therapist Supervision Overview</h2>
+            <p>Here you can manage and monitor all the supervision activities, evaluate therapist performance, and ensure compliance with therapy plans.</p>
+        </div>
+
+        <!-- Supervision Schedule -->
+        <div class="supervision-schedule progress-report">
+            <h2>Supervision Schedule</h2>
+            <form id="supervision-schedule-form">
+                <label for="therapist-name">Therapist Name:</label>
+                <input type="text" id="therapist-name" name="therapist-name" required>
+
+                <label for="supervision-date">Supervision Date:</label>
+                <input type="date" id="supervision-date" name="supervision-date" required>
+
+                <label for="supervision-time">Supervision Time:</label>
+                <input type="time" id="supervision-time" name="supervision-time" required>
+
+                <label for="supervision-notes">Supervision Notes:</label>
+                <textarea id="supervision-notes" name="supervision-notes" required></textarea>
+
+                <button type="submit">Schedule Supervision</button>
+            </form>
+        </div>
+
+        <!-- Supervision History -->
+        <div class="supervision-history progress-report">
+            <h2>Supervision History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Therapist Name</th>
+                        <th>Supervision Date</th>
+                        <th>Supervision Time</th>
+                        <th>Notes</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="supervision-history-table">
+                    <!-- Dynamic Content will be added here via JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Therapist Feedback -->
+        <div class="therapist-feedback progress-report">
+            <h2>Therapist Feedback</h2>
+            <form id="therapist-feedback-form">
+                <label for="therapist-name-feedback">Therapist Name:</label>
+                <input type="text" id="therapist-name-feedback" name="therapist-name-feedback" required>
+
+                <label for="feedback-notes">Feedback Notes:</label>
+                <textarea id="feedback-notes" name="feedback-notes" required></textarea>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </div>
+
+        <!-- General Statistics -->
+        <div class="statistics progress-report">
+            <h2>General Supervision Statistics</h2>
+            <div id="statistics-content">
+                <!-- Placeholder for potential statistics, graphs, or summaries related to supervision -->
+                <p>Total Supervisions Conducted: <span id="total-supervisions">0</span></p>
+                <p>Average Supervision Duration: <span id="average-supervision-duration">0 min</span></p>
+                <p>Number of Therapists Under Supervision: <span id="therapists-under-supervision">0</span></p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/Fronted/assets/js/supervision.js"></script>
+    <script>
+        // JavaScript for toggling the sidebar
+        document.getElementById('toggle-sidebar').addEventListener('click', function () {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('collapsed');
+        });
+
+        // JavaScript for handling form submissions, updating tables, etc.
+        // Add your JavaScript functionality here
+    </script>
+</body>
+
+</html>

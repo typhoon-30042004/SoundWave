@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Management - Therapy Management System</title>
+    <link rel="stylesheet" href="/Fronted/assests/css/patient-management.css">
+</head>
+
+<body>
+    <!-- Toggle Button -->
+    <button class="toggle-btn" id="toggle-sidebar">☰</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="patient-management.html" class="active">Patient Management</a>
+        <a href="/Fronted/views/therapy-plan.html">Therapy Plans</a>
+        <a href="session-doc.html">Session Documentation</a>
+        <a href="progress-reports.html">Progress Reports</a>
+        <a href="supervision.html">Supervision</a>
+        <a href="settings.html">Settings</a>
+        <a href="login.html">Logout</a>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <h1>Patient Management</h1>
+
+        <!-- Search and Filter -->
+        <div class="search-filter">
+            <input type="text" id="search-bar" placeholder="Search by name or therapy plan...">
+            <select id="filter-gender">
+                <option value="all">All Genders</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <button onclick="exportData()">Export Data</button>
+        </div>
+
+        <!-- Add New Patient -->
+        <div class="add-patient">
+            <h2>Add New Patient</h2>
+            <form id="add-patient-form">
+                <label for="patient-name">Name:</label>
+                <input type="text" id="patient-name" name="patient-name" required>
+
+                <label for="patient-age">Age:</label>
+                <input type="number" id="patient-age" name="patient-age" required>
+
+                <label for="patient-dob">Date of Birth:</label>
+                <input type="date" id="patient-dob" name="patient-dob" required>
+
+                <label for="patient-gender">Gender:</label>
+                <select id="patient-gender" name="patient-gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="patient-contact">Contact Number:</label>
+                <input type="text" id="patient-contact" name="patient-contact" required>
+
+                <label for="patient-address">Address:</label>
+                <textarea id="patient-address" name="patient-address" required></textarea>
+
+                <label for="therapy-plan">Therapy Plan:</label>
+                <input type="text" id="therapy-plan" name="therapy-plan" required>
+
+                <label for="session-schedule">Session Schedule:</label>
+                <input type="date" id="session-schedule" name="session-schedule" required>
+
+                <button type="submit">Add Patient</button>
+            </form>
+        </div>
+
+        <!-- Patient List -->
+        <div class="patient-list">
+            <h2>Patient List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>DOB</th>
+                        <th>Gender</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                        <th>Therapy Plan</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="patient-table-body">
+                    <!-- Dynamic Content will be added here via JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- To-Do Tasks -->
+        <div class="todo-tasks">
+            <h2>To-Do Tasks</h2>
+            <ul id="todo-list">
+                <!-- Tasks will be added here dynamically -->
+            </ul>
+            <input type="text" id="new-task" placeholder="Add new task...">
+            <button onclick="addTask()">Add Task</button>
+        </div>
+
+        <!-- Recent Activities -->
+        <div class="recent-activities">
+            <h2>Recent Activities</h2>
+            <ul id="recent-activities-list">
+                <!-- Recent activities will be added here dynamically -->
+            </ul>
+        </div>
+
+        <!-- Patient Progress Overview -->
+        <div class="progress-overview">
+            <h2>Patient Progress Overview</h2>
+            <div id="progress-chart">
+                <!-- Progress chart or statistics can be integrated here -->
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="statistics">
+            <h2>Statistics</h2>
+            <div id="statistics-content">
+                <!-- General statistics about sessions, patients, etc. -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Patient Profile Modal -->
+    <div id="patient-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Patient Profile</h2>
+            <div id="patient-profile">
+                <!-- Patient details will be loaded here dynamically -->
+            </div>
+            <button onclick="sendReminder()">Send Reminder</button>
+            <button onclick="generateReport()">Generate Report</button>
+        </div>
+    </div>
+
+    <script src="/Fronted/assests/js/patient-management.js"></script>
+</body>
+
+</html>

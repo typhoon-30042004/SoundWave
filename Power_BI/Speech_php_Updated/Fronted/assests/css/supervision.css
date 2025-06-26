@@ -1,0 +1,178 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    height: 100%;
+    background-color: #34495e;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 60px;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    z-index: 1000; /* Ensure sidebar stays above the content */
+}
+
+.sidebar.collapsed {
+    width: 0;
+    overflow: hidden;
+}
+
+.sidebar h2 {
+    padding-left: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background-color: #1abc9c;
+}
+
+/* Hide text when sidebar is collapsed */
+.sidebar.collapsed h2,
+.sidebar.collapsed a {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Toggle Button */
+.toggle-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1001; /* Ensure toggle button stays above the sidebar */
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 260px;
+    padding: 30px;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed + .main-content {
+    margin-left: 70px; /* Adjusted margin to match collapsed sidebar width */
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #28a189;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #1abc9c;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+/* Supervision Page Specific Styles */
+.supervision-overview,
+.supervision-schedule,
+.supervision-history,
+.therapist-feedback,
+.statistics {
+    margin-top: 50px;
+}
+
+.supervision-overview p,
+.statistics p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.statistics span {
+    font-weight: bold;
+}
+
+/* Form Styling */
+form label {
+    font-weight: bold;
+    margin-top: 15px;
+    display: block;
+}
+
+form textarea {
+    height: 100px;
+    resize: none;
+}

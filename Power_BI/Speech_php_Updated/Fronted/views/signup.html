@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapist Signup</title>
+    <link rel="stylesheet" href="/Fronted/assests/css/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="signup-container">
+        <h1>Therapist Signup</h1>
+        <form id="signupForm">
+            <!-- Line 1: Username -->
+            <div class="form-group">
+                <div class="input-icon">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" name="username" required placeholder="Username">
+                </div>
+                <small class="error-message" id="username-error"></small>
+            </div>
+
+            <!-- Line 2: First Name, Last Name -->
+            <div class="form-group pair">
+                <input type="text" id="first-name" name="first-name" required placeholder="First Name">
+                <input type="text" id="last-name" name="last-name" required placeholder="Last Name">
+            </div>
+
+            <!-- Line 3: Sex -->
+            <div class="form-group">
+                <select id="sex" name="sex" required>
+                    <option value="" disabled selected>Select Sex</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <small class="error-message" id="sex-error"></small>
+            </div>
+
+            <!-- Line 4: Phone, Email -->
+            <div class="form-group pair">
+                <input type="tel" id="phone" name="phone" required placeholder="Phone Number">
+                <input type="email" id="email" name="email" required placeholder="Email">
+            </div>
+
+            <!-- Line 5: Specialization -->
+            <div class="form-group">
+                <select id="specialization" name="specialization" required>
+                    <option value="" disabled selected>Select Specialization</option>
+                    <option value="speech-therapy">Speech Therapy</option>
+                    <option value="language-pathology">Language Pathology</option>
+                    <option value="audiology">Audiology</option>
+                    <option value="occupational-therapy">Occupational Therapy</option>
+                </select>
+                <small class="error-message" id="specialization-error"></small>
+            </div>
+
+            <!-- Line 6: Qualification -->
+            <div class="form-group">
+                <input type="text" id="qualification" name="qualification" required placeholder="Qualification">
+            </div>
+
+            <!-- Line 7: Experience and License Number -->
+            <div class="experience-license-container">
+                <div class="form-group pair">
+                    <input type="number" id="experience" name="experience" required placeholder="Experience">
+                    <input type="text" id="license-number" name="license-number" required placeholder="License Number">
+                </div>
+            </div>
+            <!-- Line 9: Bio -->
+            <div class="form-group">
+                <textarea id="bio" name="bio" rows="4" placeholder="Tell us a bit about yourself..." required></textarea>
+            </div>
+
+            <!-- Line 10: Profile Picture -->
+            <div class="form-group">
+                <label for="profile-picture">Profile Picture</label>
+                <input type="file" id="profile-picture" name="profile-picture" accept="image/*" required>
+            </div>
+
+            <!-- Line 11: Address -->
+            <div class="form-group">
+                <textarea id="address" name="address" rows="4" required placeholder="Enter your address"></textarea>
+            </div>
+
+            <!-- Line 12: Password, Confirm Password -->
+            <div class="form-group pair">
+                <div class="input-icon">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+                </div>
+                <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm your password">
+            </div>
+
+            <button type="submit">Sign Up</button>
+            <div class="form-footer">
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+            </div>
+        </form>
+    </div>
+    <script src="/Fronted/assests/js/signup.js"></script>
+</body>
+</html>

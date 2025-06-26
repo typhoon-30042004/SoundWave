@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapy Management System</title>
+    <link rel="stylesheet" href="/Fronted/assests/css/therpist-index.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h1>Menu</h1>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="patient-management.html">Patient Management</a>
+        <a href="/Fronted/views/therapy-plan.html">Therapy Plans</a>
+        <a href="/Fronted/views/session-doc.html">Session Documentation</a>
+        <a href="/Fronted/views/progress-reports.html">Progress Reports</a>
+        <a href="/Fronted/views/supervision.html">Supervision</a>
+        <a href="/Fronted/views/settings.html">Settings</a>
+        <a href="/Fronted/views/login.html">Logout</a>
+    </div>
+    <button id="sidebarToggle" class="sidebar-toggle">☰</button>
+
+    <!-- Main Content Area -->
+    <div class="main-content" id="mainContent">
+        <h1>Welcome to the Therapy Management System</h1>
+        <!-- <p>Select an option from the sidebar to begin.</p> -->
+
+        <!-- Quick Links Section -->
+        <div class="quick-links">
+            <h2>Quick Links</h2>
+            <div class="flex-container">
+                <div class="card">
+                    <h3>New Patient</h3>
+                    <p>Register a new patient in the system.</p>
+                    <a href="patient-management.html" class="btn">Add Patient</a>
+                </div>
+                <div class="card">
+                    <h3>Upcoming Sessions</h3>
+                    <p>View the schedule for upcoming therapy sessions.</p>
+                    <a href="session-doc.html" class="btn">View Schedule</a>
+                </div>
+                <div class="card">
+                    <h3>Create Therapy Plan</h3>
+                    <p>Design a new therapy plan for patients.</p>
+                    <a href="therapy-plans.html" class="btn">Create Plan</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Features Section -->
+        <div class="system-features">
+            <h2>System Features</h2>
+            <ul>
+                <li>Comprehensive patient management with detailed records.</li>
+                <li>Customizable therapy plans tailored to individual needs.</li>
+                <li>Real-time session documentation for accurate progress tracking.</li>
+                <li>Advanced reporting features to monitor patient outcomes.</li>
+                <li>Role-based access control for secure supervision and management.</li>
+                <li>Easy-to-use interface with responsive design for all devices.</li>
+            </ul>
+        </div>
+
+        <!-- Recent Activities Section -->
+        <div class="recent-activities">
+            <h2>Recent Activities</h2>
+            <ul>
+                <li><strong>John Doe</strong> updated the therapy plan for <strong>Patient A</strong> (Today).</li>
+                <li><strong>Jane Smith</strong> completed session documentation for <strong>Patient B</strong> (Yesterday).</li>
+                <li><strong>Admin</strong> added a new therapist to the system (2 days ago).</li>
+                <li><strong>Dr. Brown</strong> reviewed the progress report for <strong>Patient C</strong> (3 days ago).</li>
+                <!-- Display today's date -->
+                <li><strong>System</strong> displayed today's date (Today).</li>
+            </ul>
+        </div>
+
+        <!-- Resources Section -->
+        <div class="resources">
+            <h2>Resources</h2>
+            <div class="flex-container">
+                <div class="card">
+                    <img src="/Fronted/assests/images/user-guide.png" alt="User Guide">
+                    <h3>User Guide</h3>
+                    <p>Learn how to use the Therapy Management System effectively.</p>
+                    <a href="/Fronted/views/user-guide.html" class="btn">Read Guide</a>
+                </div>
+                <div class="card">
+                    <img src="/Fronted/assests/images/support.png" alt="Support">
+                    <h3>Support</h3>
+                    <p>Need help? Contact our support team for assistance.</p>
+                    <a href="/Fronted/views/support.html" class="btn">Get Support</a>
+                </div>
+                <div class="card">
+                    <img src="/Fronted/assests/images/faqs.png" alt="FAQs">
+                    <h3>FAQs</h3>
+                    <p>Find answers to common questions about the system.</p>
+                    <a href="/Fronted/views/faq.html" class="btn">View FAQs</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Fronted/assests/js/therpist-index.js"></script>
+</body>
+</html>

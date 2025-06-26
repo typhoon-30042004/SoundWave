@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Speech Therapy Services</title>
+    <link rel="stylesheet" href="/Fronted/assests/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-container">
+            <h1>LOGIN</h1>
+            <form id="loginForm">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-user-tag"></i>
+                    <select id="role" name="role" required>
+                        <option value="" disabled selected>Select Role</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Supervisor">Supervisor</option>
+                        <option value="Therapist">Therapist</option>
+                    </select>
+                </div>
+                <button type="submit">Login</button>
+                <div class="forgot-password">
+                    <a href="/Fronted/views/forget-password.html">Forgot your password?</a>
+                </div>
+            </form>
+            <p class="signup-link">Don't have an account? <a href="/Fronted/views/signup.html">Sign Up here</a></p>
+        </div>
+        <div class="login-image">
+            <img src="/Fronted/assests/images/sideimage.jpeg" alt="Login Image">
+        </div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting
+
+            const role = document.getElementById('role').value;
+            
+            // Redirect based on selected role
+            switch (role) {
+                case 'Admin':
+                    window.location.href = "/Fronted/views/admin.html";
+                    break;
+                case 'Supervisor':
+                    window.location.href = "/Fronted/views/supervisor.html";
+                    break;
+                case 'Therapist':
+                    window.location.href = "/Fronted/views/dashboard.html";
+                    break;
+                default:
+                    alert('Please select a valid role.');
+            }
+        });
+    </script>
+</body>
+</html>
